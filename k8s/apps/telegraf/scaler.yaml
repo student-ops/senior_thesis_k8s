@@ -8,5 +8,5 @@ spec:
     kind: Deployment
     name: telegraf-influxdb
   minReplicas: 2
-  maxReplicas: 10
+  maxReplicas: 50
   targetCPUUtilizationPercentage: 50

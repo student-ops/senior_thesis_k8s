@@ -60,6 +60,7 @@ data:
   mosquitto.conf: |
     listener 1883
     allow_anonymous true
+    max_queued_messages 0
 
 ---
 apiVersion: v1
