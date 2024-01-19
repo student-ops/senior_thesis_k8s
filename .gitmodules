@@ -1,0 +1,6 @@
+[submodule "cloud-infla"]
+	path = cloud-infla
+	url = https://github.com/student-ops/senior_thesis_Iac
+[submodule "k8s/apps/batch_worker"]
+	path = k8s/apps/batch_worker
+	url = https://github.com/student-ops/senior_thesis_batch_worker.git
