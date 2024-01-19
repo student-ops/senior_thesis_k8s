@@ -1,0 +1,1 @@
+kubectl apply -f ../../apps/grafana/grafana.yaml
