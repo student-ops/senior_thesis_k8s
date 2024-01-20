@@ -1,3 +1,4 @@
+kubectl delete pods,svc,deployment,daemonset,replicaset,statefulset --all
 helm uninstall my-prometheus
 helm repo add my-prometheus https://prometheus-community.github.io/helm-charts
 helm repo update
