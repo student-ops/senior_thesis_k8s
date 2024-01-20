@@ -6,12 +6,13 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - http:
-      paths:
-      - path: /telegraf
-        pathType: Prefix
-        backend:
-          service:
-            name: telegraf-influxdb-service
-            port:
-              number: 8086
+    - host: hello-world.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: grafana-service
+                port:
+                  number: 3000
