@@ -4,3 +4,6 @@
 [submodule "k8s/apps/batch_worker"]
 	path = k8s/apps/batch_worker
 	url = https://github.com/student-ops/senior_thesis_batch_worker.git
+[submodule "k8s/apps/mqtt_publisher"]
+	path = k8s/apps/mqtt_publisher
+	url = https://github.com/student-ops/mqtt_publisher.git
