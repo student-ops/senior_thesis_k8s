@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: grafana-deployment
+  name: grafana-d
   labels:
     app: grafana
 spec:
@@ -34,6 +34,8 @@ spec:
               value: "admin"
             - name: GF_SECURITY_ADMIN_PASSWORD
               value: "admin1234"
+      nodeSelector:
+        role: central_worker
       volumes:
         - name: grafana-storage
           persistentVolumeClaim:
@@ -43,7 +45,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: grafana-service
+  name: centarl-grafana-svc
 spec:
   selector:
     app: grafana
