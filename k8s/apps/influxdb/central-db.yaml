@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: central-db-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: central-influxdb
+  template:
+    metadata:
+      labels:
+        app: central-influxdb
+    spec:
+      containers:
+        - name: influxdb
+          image: influxdb:latest
+          ports:
+            - containerPort: 8086
+          env:
+            - name: DOCKER_INFLUXDB_INIT_MODE
+              value: "setup"
+            - name: DOCKER_INFLUXDB_INIT_USERNAME
+              value: "user"
+            - name: DOCKER_INFLUXDB_INIT_PASSWORD
+              value: "password"
+            - name: DOCKER_INFLUXDB_INIT_ORG
+              value: "some_org"
+            - name: DOCKER_INFLUXDB_INIT_BUCKET
+              value: "surroundings_avg"
+            - name: DOCKER_INFLUXDB_INIT_ADMIN_TOKEN
+              value: "4eYvsu8wZCJ6tKuE2sxvFHkvYFwSMVK0011hEEiojvejzpSaij86vYQomN_12au6eK-2MZ6Knr-Sax201y70w=="
+      nodeSelector:
+        role: central_worker
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: central-db-svc
+spec:
+  type: ClusterIP
+  ports:
+    - name: influxdb
+      port: 8086
+      targetPort: 8086
+  selector:
+    app: telegraf-influxdb
