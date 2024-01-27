@@ -1,0 +1,4 @@
+```
+export BASE=$(pwd)
+
+```
