@@ -28,7 +28,7 @@ spec:
             - name: DOCKER_INFLUXDB_INIT_ORG
               value: "some_org"
             - name: DOCKER_INFLUXDB_INIT_BUCKET
-              value: "some_data"
+              value: "surroundings_avg"
             - name: DOCKER_INFLUXDB_INIT_ADMIN_TOKEN
               value: "4eYvsu8wZCJ6tKuE2sxvFHkvYFwSMVK0011hEEiojvejzpSaij86vYQomN_12au6eK-2MZ6Knr-Sax201y70w=="
 
