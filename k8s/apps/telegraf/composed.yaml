@@ -50,6 +50,8 @@ spec:
         - name: mosqquito-config-volume
           configMap:
             name: mosquitto-config
+      nodeSelector:
+        role: edge_worker
 
 ---
 apiVersion: v1
